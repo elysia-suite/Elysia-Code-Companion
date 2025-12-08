@@ -240,11 +240,47 @@
                 <div class="form-group">
                     <label for="model-select">Elysia's Brain (Model)</label>
                     <select id="model-select">
-                        <option value="x-ai/grok-3-fast">Grok 3 Fast (Recommended) ⚡</option>
-                        <option value="anthropic/claude-sonnet-4">Claude Sonnet 4</option>
-                        <option value="openai/gpt-4.1">GPT-4.1</option>
-                        <option value="deepseek/deepseek-chat-v3-0324">DeepSeek v3</option>
-                        <option value="qwen/qwen3-235b-a22b">Qwen3 235B</option>
+                        <!-- ANTHROPIC MODELS -->
+                        <optgroup label="🔷 Anthropic Claude">
+                            <option value="anthropic/claude-haiku-4.5">Claude Haiku 4.5 (Fast) ⚡</option>
+                            <option value="anthropic/claude-sonnet-4.5">Claude Sonnet 4.5</option>
+                            <option value="anthropic/claude-opus-4.5">Claude Opus 4.5 (Premium) 👑</option>
+                            <option value="anthropic/claude-3-haiku">Claude 3 Haiku</option>
+                        </optgroup>
+
+                        <!-- XAI MODELS -->
+                        <optgroup label="⚡ xAI Grok">
+                            <option value="x-ai/grok-4.1-fast">Grok 4.1 Fast (Recommended) ⚡✨</option>
+                            <option value="x-ai/grok-4-fast">Grok 4 Fast ⚡</option>
+                        </optgroup>
+
+                        <!-- QWEN MODELS -->
+                        <optgroup label="🧠 Alibaba Qwen">
+                            <option value="qwen/qwen3-235b-a22b-2507">Qwen3 235B (2507)</option>
+                            <option value="qwen/qwen3-235b-a22b-thinking-2507">Qwen3 235B Thinking (2507)</option>
+                            <option value="qwen/qwen3-vl-235b-a22b-instruct">Qwen3 VL 235B Instruct</option>
+                            <option value="qwen/qwen3-coder">Qwen3 Coder</option>
+                        </optgroup>
+
+                        <!-- DEEPSEEK MODELS -->
+                        <optgroup label="🔮 DeepSeek">
+                            <option value="deepseek/deepseek-v3.2">DeepSeek v3.2</option>
+                            <option value="deepseek/deepseek-v3.2-speciale">DeepSeek v3.2 Spéciale</option>
+                            <option value="deepseek/deepseek-chat-v3.1">DeepSeek Chat v3.1</option>
+                            <option value="deepseek/deepseek-v3.1-terminus:exacto">DeepSeek v3.1 Terminus Exacto
+                            </option>
+                        </optgroup>
+
+                        <!-- MOONSHOT MODELS -->
+                        <optgroup label="🌙 Moonshot Kimi">
+                            <option value="moonshotai/kimi-k2-0905">Kimi K2 (0905)</option>
+                            <option value="moonshotai/kimi-k2-thinking">Kimi K2 Thinking</option>
+                        </optgroup>
+
+                        <!-- GOOGLE MODELS -->
+                        <optgroup label="🔍 Google Gemini">
+                            <option value="google/gemini-3-pro-preview">Gemini 3 Pro Preview</option>
+                        </optgroup>
                     </select>
                 </div>
 
