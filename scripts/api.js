@@ -11,7 +11,7 @@ const API = {
     // Call Elysia via OpenRouter
     async call(messages, options = {}) {
         const apiKey = options.apiKey || Utils.storage.get("apiKey");
-        const model = options.model || Utils.storage.get("model", "x-ai/grok-3-fast");
+        const model = options.model || Utils.storage.get("model", "anthropic/claude-haiku-4.5");
 
         // Validate API key
         const validation = Utils.validateApiKey(apiKey);
@@ -87,7 +87,7 @@ const API = {
     // Stream Chat (for real-time responses)
     async stream(messages, onChunk, options = {}) {
         const apiKey = options.apiKey || Utils.storage.get("apiKey");
-        const model = options.model || Utils.storage.get("model", "x-ai/grok-3-fast");
+        const model = options.model || Utils.storage.get("model", "anthropic/claude-haiku-4.5");
 
         const validation = Utils.validateApiKey(apiKey);
         if (!validation.valid) {
