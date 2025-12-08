@@ -398,9 +398,11 @@ Increase for large projects, decrease for performance.
 
 ---
 
-## 📝 License
+## 📝 # License
 
-MIT License - Built by Elysia Suite
+## 💎 Elysia's Code Companion
+
+**Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**
 
 ---
 
@@ -474,3 +476,4 @@ Made with 💜 by **Elysia Suite**
 **Questions? Issues?**
 
 Open an issue on GitHub - we're here to help! 😊💎
+
