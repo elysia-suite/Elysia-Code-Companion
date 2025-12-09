@@ -390,7 +390,7 @@ a:hover {
 
 .main-container {
     display: grid;
-    grid-template-columns: 300px 1fr 400px;
+    grid-template-columns: 280px 1fr 450px;
     gap: 0;
     flex: 1;
     min-height: 0;
@@ -404,7 +404,7 @@ a:hover {
 }
 
 .main-container:has(.sidebar-left.hidden):not(:has(.sidebar-right.hidden)) {
-    grid-template-columns: 0 1fr 400px; /* Left hidden: chat expands left */
+    grid-template-columns: 0 1fr 450px; /* Left hidden: chat expands left */
 }
 
 .main-container:not(:has(.sidebar-left.hidden)):has(.sidebar-right.hidden) {
@@ -437,8 +437,8 @@ a:hover {
 }
 
 .sidebar-right {
-    width: 350px;
-    min-width: 350px;
+    width: 450px;
+    min-width: 450px;
     border-right: none;
     border-left: 1px solid var(--border-color);
 }
@@ -802,42 +802,44 @@ a:hover {
 }
 
 .input-wrapper {
+    position: relative;
     display: flex;
-    gap: 0.75rem;
     align-items: flex-end;
 }
 
-/* Mobile: Stack vertically for better input width */
+/* Mobile: adjust for smaller screens */
 @media (max-width: 600px) {
     .input-wrapper {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.5rem;
+        /* Keep relative positioning on mobile too */
     }
 
     .btn-send,
     .btn-cancel {
-        width: 100%;
-        justify-content: center;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
     }
 }
 
 #chat-input {
-    flex: 1;
+    width: 100%;
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 0.75rem;
+    border-radius: 12px;
+    padding: 0.875rem 1rem;
+    padding-right: 4.5rem; /* Space for the button inside */
     color: var(--text-primary);
     font-family: var(--font-sans);
     font-size: 0.95rem;
     resize: none;
-    transition: border-color 0.2s;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
 }
 
 #chat-input:focus {
     outline: none;
     border-color: var(--accent-purple);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.15);
 }
 
 .input-info {
@@ -976,32 +978,46 @@ button {
 }
 
 .btn-send {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
     background: var(--gradient-primary);
     color: white;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     font-weight: 600;
+    font-size: 0.875rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-send:hover:not(:disabled) {
-    transform: scale(1.02);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .btn-send:disabled {
-    opacity: 0.5;
+    opacity: 0.4;
     cursor: not-allowed;
+    transform: none;
 }
 
 .btn-cancel {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
     background: var(--error);
     color: white;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     font-weight: 600;
+    font-size: 0.875rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-cancel:hover {
@@ -1205,8 +1221,8 @@ button {
 
 .preview-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 0.75rem;
     margin-bottom: 1rem;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--border-color);
@@ -1216,11 +1232,15 @@ button {
     font-family: var(--font-mono);
     color: var(--accent-purple);
     font-weight: 600;
+    font-size: 0.9rem;
+    word-break: break-all;
+    line-height: 1.4;
 }
 
 .preview-actions {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 /* ========================================

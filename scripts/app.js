@@ -12,7 +12,7 @@ class App {
     constructor() {
         this.state = {
             apiKey: null,
-            model: "x-ai/grok-3-fast",
+            model: "x-ai/grok-4.1-fast",
             maxFiles: 100,
             autoPreview: true,
             syntaxHighlighting: true,
